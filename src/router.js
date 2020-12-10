@@ -16,26 +16,31 @@ export default new Router({
             path: '/about-us',
             name: 'AboutUs',
             component: () => import("@/views/AboutUs")
+        },
+        {
+            path: '/fruits/banana',
+            name: 'BananaInfo',
+            component: () => import("@/views/fruits/BananaInfo")
+        },
+        {
+            path: '/vegetables/zucchini',
+            name: 'ZucchiniInfo',
+            component: () => import("@/views/vegetables/ZucchiniInfo")
+        },
+        {
+            path: '/meat/turkey',
+            name: 'TurkeyInfo',
+            component: () => import("@/views/meat/TurkeyInfo")
+        },
+        {
+            path: '/videos',
+            name: 'Videos',
+            component: () => import("@/views/Videos")
+        },
+        {
+            path: '/myths',
+            name: 'Myths',
+            component: () => import("@/views/Myths")
         }
-        // {
-        //     path: '/users/:id',
-        //     name: 'UserDetails',
-        //     component: () => import("@/views/UserDetails")
-        // },
-        // {
-        //     path: '/products',
-        //     name: 'Products',
-        //     component: () => import("@/views/Products")
-        // },
-        // {
-        //     path: '/groups',
-        //     name: 'Groups',
-        //     component: () => import("@/views/Group")
-        // },
-        // {
-        //     path: '/producers',
-        //     name: 'Producers',
-        //     component: () => import("@/views/Producer")
-        // }
     ]
 })

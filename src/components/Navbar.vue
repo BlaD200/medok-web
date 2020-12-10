@@ -14,36 +14,36 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ml-lg-4 ml-md-auto">
-                    <b-nav-item href="#">Відео</b-nav-item>
+                    <router-link :to="{name: 'TurkeyInfo'}" class="nav-link">Відео</router-link>
 
-                    <b-nav-item-dropdown id="Food" text="Харчування">
+                    <b-nav-item-dropdown id="Food" text="Харчування" ref="dropdown">
                         <b-nav-item-dropdown id="Fruits" dropright text="Фрукти">
-                            <b-dropdown-item href="#">Банан</b-dropdown-item>
+                            <router-link :to="{name: 'BananaInfo'}" class="dropdown-item">Банан</router-link>
                             <b-dropdown-item href="#" disabled>У розробці</b-dropdown-item>
                         </b-nav-item-dropdown>
 
                         <b-nav-item-dropdown id="Vegetables" dropright text="Овочі">
-                            <b-dropdown-item href="#">Кабачок</b-dropdown-item>
+                            <router-link :to="{name: 'ZucchiniInfo'}" class="dropdown-item">Кабачок</router-link>
                             <b-dropdown-item href="#" disabled>У розробці</b-dropdown-item>
                         </b-nav-item-dropdown>
 
                         <b-nav-item-dropdown id="Meat" dropright text="М'ясо">
-                            <b-dropdown-item href="#">Індчика</b-dropdown-item>
+                            <router-link :to="{name: 'TurkeyInfo'}" class="dropdown-item">Індчика</router-link>
                             <b-dropdown-item href="#" disabled>У розробці</b-dropdown-item>
                         </b-nav-item-dropdown>
 
                         <b-nav-item href="#" disabled>У розробці</b-nav-item>
                     </b-nav-item-dropdown>
 
-                    <b-nav-item href="#">Міфи</b-nav-item>
+                    <router-link :to="{name: 'Myths'}" class="nav-link">Міфи</router-link>
                 </b-navbar-nav>
 
-<!--                <b-navbar-nav>-->
-<!--                    <b-nav-form class="ml-lg-4 ml-md-2">-->
-<!--                        <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>-->
-<!--                        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>-->
-<!--                    </b-nav-form>-->
-<!--                </b-navbar-nav>-->
+                <!--                <b-navbar-nav>-->
+                <!--                    <b-nav-form class="ml-lg-4 ml-md-2">-->
+                <!--                        <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>-->
+                <!--                        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>-->
+                <!--                    </b-nav-form>-->
+                <!--                </b-navbar-nav>-->
 
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
@@ -74,26 +74,42 @@
         data: function () {
             return {
                 rootDropDownMenuId: "Food",
-                lastDropDownMenuId: ""
+                showDropdown: true
+            }
+        },
+        watch: {
+            $route() {
+                this.showDropdown = false;
+                this.$refs.dropdown.hide();
+            }
+        },
+        methods: {
+            close() {
+                this.showDropdown = false
+                this.$refs.dropdown.hide();
             }
         },
         mounted: function () {
+            document.addEventListener('click', this.close)
+
             this.$root.$on('bv::dropdown::show', bvEvent => {
-                console.log("open", bvEvent.componentId)
+                this.showDropdown = true;
                 this.lastDropDownMenuId = bvEvent.componentId;
             })
             this.$root.$on('bv::dropdown::hide', bvEvent => {
-                console.log('close', bvEvent.componentId)
                 if (bvEvent.componentId === this.lastDropDownMenuId) {
                     this.lastDropDownMenuId = ""
                 }
-                if (this.lastDropDownMenuId.length !== 0
+                if (this.showDropdown &&
+                    this.lastDropDownMenuId.length !== 0
                     && bvEvent.componentId === this.rootDropDownMenuId) {
                     bvEvent.preventDefault();
                 }
             })
         },
-        methods: {}
+        beforeDestroy() {
+            document.removeEventListener('click', this.close)
+        }
     }
 </script>
 
