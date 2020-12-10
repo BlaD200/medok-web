@@ -95,6 +95,22 @@
                 </b-card>
             </b-col>
         </b-row>
+        <b-row class="justify-content-center">
+            <b-col cols="12" md="6">
+                <b-card
+                        title="Владислав Синицин"
+                        :img-src='require("../assets/img/about-us/vladyslav-synytsyn.jpg")'
+                        img-alt="Image"
+                        img-top
+                        tag="article"
+                        class="mb-2"
+                >
+                    <!--                    <b-card-text>-->
+                    <!--                    </b-card-text>-->
+                    <!--                    <b-button href="#" variant="primary">Go somewhere</b-button>-->
+                </b-card>
+            </b-col>
+        </b-row>
     </BaseLayout>
 </template>
 
