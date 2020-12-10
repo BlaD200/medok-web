@@ -3,17 +3,14 @@
         <Navbar></Navbar>
 
         <div>
-            <div class="mt-5 p-5">
-                <div class="bg-light">
-                    <p class="p-5">Text</p>
-                </div>
-            </div>
+            <router-view></router-view>
         </div>
     </div>
 </template>
 
 <script>
     import Navbar from "@/components/Navbar";
+    // import Home from "@/views/Home";
 
     export default {
         name: 'App',
@@ -30,6 +27,6 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        background-image: url("assets/img/background-image.png");
+        background: linear-gradient(to right, rgba(0,0,0,.22), rgba(0,0,0,.22)), url("assets/img/background-image.png");
     }
 </style>
