@@ -1,6 +1,6 @@
 <template>
     <BaseLayout title="Відео">
-
+        <p>У розробці</p>
     </BaseLayout>
 </template>
 

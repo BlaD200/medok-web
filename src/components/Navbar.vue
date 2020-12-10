@@ -3,7 +3,7 @@
         <b-navbar toggleable="lg" type="light">
             <b-navbar class="m-0 p-0" variant="faded">
                 <router-link :to="{name: 'Home'}" class="navbar-brand p-0">
-                    <img id="logo-img" src="../assets/img/main-logo.jpg" alt="MedOK logo">
+                    <img id="logo-img" src="../assets/img/logos/main-logo.jpg" alt="MedOK logo">
                 </router-link>
                 <!--                <b-navbar-brand class="m-0 p-0" href="/">-->
                 <!--                    -->
@@ -14,7 +14,7 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ml-lg-4 ml-md-auto">
-                    <router-link :to="{name: 'TurkeyInfo'}" class="nav-link">Відео</router-link>
+                    <router-link :to="{name: 'Videos'}" class="nav-link">Відео</router-link>
 
                     <b-nav-item-dropdown id="Food" text="Харчування" ref="dropdown">
                         <b-nav-item-dropdown id="Fruits" class="px-2 px-lg-0" dropright text="Фрукти">
@@ -28,7 +28,7 @@
                         </b-nav-item-dropdown>
 
                         <b-nav-item-dropdown id="Meat" class="px-2 px-lg-0" dropright text="М'ясо">
-                            <router-link :to="{name: 'TurkeyInfo'}" class="dropdown-item">Індчика</router-link>
+                            <router-link :to="{name: 'TurkeyInfo'}" class="dropdown-item">Індичка</router-link>
                             <b-dropdown-item href="#" disabled>У розробці</b-dropdown-item>
                         </b-nav-item-dropdown>
 
@@ -51,16 +51,16 @@
                 </b-navbar-nav>
                 <b-navbar-nav id="link-imgs">
                     <b-nav-item href="https://www.facebook.com/profile.php?id=100059078722524" target="_blank">
-                        <img src="../assets/img/facebook-logo.png" alt="Facebook link">
+                        <img src="../assets/img/logos/facebook-logo.png" alt="Facebook link">
                     </b-nav-item>
                     <b-nav-item href="https://t.me/medok_ua" target="_blank">
-                        <img src="../assets/img/telegram-logo.png" alt="Telegram link">
+                        <img src="../assets/img/logos/telegram-logo.png" alt="Telegram link">
                     </b-nav-item>
                     <b-nav-item href="https://instagram.com/_medok_ua?r=nametag" target="_blank">
-                        <img src="../assets/img/instagram-logo.png" alt="Instagram link">
+                        <img src="../assets/img/logos/instagram-logo.png" alt="Instagram link">
                     </b-nav-item>
                     <b-nav-item href="https://vm.tiktok.com/ZSGj6saB/" target="_blank">
-                        <img src="../assets/img/tiktok-logo.png" alt="TikTok link">
+                        <img src="../assets/img/logos/tiktok-logo.png" alt="TikTok link">
                     </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
