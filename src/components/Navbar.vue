@@ -17,22 +17,22 @@
                     <router-link :to="{name: 'TurkeyInfo'}" class="nav-link">Відео</router-link>
 
                     <b-nav-item-dropdown id="Food" text="Харчування" ref="dropdown">
-                        <b-nav-item-dropdown id="Fruits" dropright text="Фрукти">
+                        <b-nav-item-dropdown id="Fruits" class="px-2 px-lg-0" dropright text="Фрукти">
                             <router-link :to="{name: 'BananaInfo'}" class="dropdown-item">Банан</router-link>
                             <b-dropdown-item href="#" disabled>У розробці</b-dropdown-item>
                         </b-nav-item-dropdown>
 
-                        <b-nav-item-dropdown id="Vegetables" dropright text="Овочі">
+                        <b-nav-item-dropdown id="Vegetables" class="px-2 px-lg-0" dropright text="Овочі">
                             <router-link :to="{name: 'ZucchiniInfo'}" class="dropdown-item">Кабачок</router-link>
                             <b-dropdown-item href="#" disabled>У розробці</b-dropdown-item>
                         </b-nav-item-dropdown>
 
-                        <b-nav-item-dropdown id="Meat" dropright text="М'ясо">
+                        <b-nav-item-dropdown id="Meat" class="px-2 px-lg-0" dropright text="М'ясо">
                             <router-link :to="{name: 'TurkeyInfo'}" class="dropdown-item">Індчика</router-link>
                             <b-dropdown-item href="#" disabled>У розробці</b-dropdown-item>
                         </b-nav-item-dropdown>
 
-                        <b-nav-item href="#" disabled>У розробці</b-nav-item>
+                        <b-nav-item href="#" class="px-2 px-lg-0" disabled>У розробці</b-nav-item>
                     </b-nav-item-dropdown>
 
                     <router-link :to="{name: 'Myths'}" class="nav-link">Міфи</router-link>
