@@ -1,7 +1,7 @@
 <template>
     <BaseLayout title="Індичка">
         <b-row class="justify-content-center">
-            <img src="../../assets/img/meat/turkey.jpeg" alt="Індичка">
+            <img src="../../assets/img/meat/turkey.jpg" alt="Індичка">
         </b-row>
         <br>
         <b-row>
